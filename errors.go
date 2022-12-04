@@ -37,7 +37,8 @@ func (e *CommandError) Error() string {
 	return fmt.Sprintf("'%s' returned %d: %s", e.cmd, e.code, e.msg)
 }
 
-var cmdErrRegexp = regexp.MustCompile(`([+-]\d+),\"(.*?)\"`)
+// match both with and without quotes around error message
+var cmdErrRegexp = regexp.MustCompile(`([+-]\d+),.?(.*?)(\"|$)`)
 
 func confirmError(cmd, errRes string) error {
 	re := cmdErrRegexp.Copy()
@@ -46,7 +47,10 @@ func confirmError(cmd, errRes string) error {
 		return InvalidFormatError(errRes)
 	}
 
-	code, _ := strconv.Atoi(g[1])
+	code, err := strconv.Atoi(g[1])
+	if err != nil {
+		return err
+	}
 	if code == 0 {
 		return nil
 	}
