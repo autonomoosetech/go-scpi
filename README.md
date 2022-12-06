@@ -40,3 +40,13 @@ if err != nil {
 // show the response
 fmt.Printf("got response: %s", response)
 ```
+
+## Development
+
+This project contains a makefile to aid in automating common tasks. You can run `make help` or just `make` to see the possible makefile targets.
+
+### Run unit tests
+
+```shell
+make test
+```
