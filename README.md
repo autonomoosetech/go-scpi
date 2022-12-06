@@ -8,7 +8,7 @@ Go library to control SCPI devices over TCP and serial interfaces.
 
 ## Installation and usage
 
-To install, run the following.
+To install, run the following
 
 ```shell
 go get github.com/autonomoosetech/go-scpi
