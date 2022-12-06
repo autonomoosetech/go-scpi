@@ -6,6 +6,22 @@ Forked from https://github.com/scizorman/go-scpi
 
 Go library to control SCPI devices over TCP and serial interfaces.
 
+## Installation and usage
+
+To install, run the following.
+
+```shell
+go get github.com/autonomoosetech/go-scpi
+```
+
+To use, import as `github.com/autonomoosetech/go-scpi` like so
+
+```go
+import (
+	"github.com/autonomoosetech/go-scpi"
+)
+```
+
 ## Example
 
 ```go
