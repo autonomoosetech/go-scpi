@@ -106,6 +106,6 @@ func (c *TCPClient) QueryContext(ctx context.Context, cmd string) (res string, e
 		return "", err
 	}
 
-	res = string(buf[:l])
+	res = strings.TrimSuffix(string(buf[:l]), "\n")
 	return res, nil
 }
