@@ -23,7 +23,3 @@ test: vet ## Run tests
 .PHONY: install
 install: test ## Install as executable
 	go install -v ./...
-
-.PHONY: build
-build: test ## Build executable
-	go build -v -o bin/ ./...
