@@ -42,6 +42,7 @@ var cmdErrRegexp = regexp.MustCompile(`([+-]\d+),.?(.*?)(\"|$)`)
 
 func confirmError(cmd, errRes string) error {
 	re := cmdErrRegexp.Copy()
+	errRes = strings.TrimSuffix(errRes, "\n")
 	g := re.FindStringSubmatch(errRes)
 	if g == nil {
 		return InvalidFormatError(errRes)

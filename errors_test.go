@@ -49,7 +49,7 @@ func TestConfirmError(t *testing.T) {
 		"NoErrorWithoutQuotes": {
 			in: map[string]string{
 				"cmd":    "foo",
-				"errRes": "+0, No error",
+				"errRes": "+0, No error\n",
 			},
 			want: nil,
 		},
