@@ -38,7 +38,7 @@ func (e *CommandError) Error() string {
 }
 
 // match both with and without quotes around error message
-var cmdErrRegexp = regexp.MustCompile(`([+-]\d+),.?(.*?)(\"|$)`)
+var cmdErrRegexp = regexp.MustCompile(`([+-]?\d+),.?(.*?)(\"|$)`)
 
 func confirmError(cmd, errRes string) error {
 	re := cmdErrRegexp.Copy()
