@@ -46,6 +46,13 @@ func TestConfirmError(t *testing.T) {
 			},
 			want: nil,
 		},
+		"NoErrorWithoutSign": {
+			in: map[string]string{
+				"cmd":    "*CLS",
+				"errRes": "0,\"No error\"",
+			},
+			want: nil,
+		},
 		"NoErrorWithoutQuotes": {
 			in: map[string]string{
 				"cmd":    "foo",
